@@ -6,11 +6,10 @@ import Navbar from "@/components/layouts/Navbar";
 export default function Home() {
   return (
     <div>
-      <head>
+      <Head>
         <title>Home</title>
-      </head>
-      <h1>Hello World, Panca</h1>
-      <p>Halo</p>
+      </Head>
+      <h1>Hello, Its Me</h1>
     </div>
   );
 }
