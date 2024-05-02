@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Product.module.scss";
-import { ProductType } from "@/pages/product/product.type";
+import { ProductType } from "@/types/product.type";
+import Link from "next/link";
 
 const ProductView = ({ products }: { products: ProductType[] }) => {
-  console.log(products);
   return (
     <div className={styles.product}>
       <h1 className={styles.product__title}>Product</h1>
@@ -11,7 +11,7 @@ const ProductView = ({ products }: { products: ProductType[] }) => {
         {products.length > 0 ? (
           <>
             {products.map((item: ProductType) => (
-              <div key={item.id} className={styles.product__content__item}>
+              <Link href={`/product/${item.id}`} key={item.id} className={styles.product__content__item}>
                 <div className={styles.product__content__item__img}>
                   <img src={item.image} alt={item.name} />
                 </div>
@@ -26,7 +26,7 @@ const ProductView = ({ products }: { products: ProductType[] }) => {
                     minimumFractionDigits: 0,
                   }).format(item.price)}
                 </p>
-              </div>
+              </Link>
             ))}
           </>
         ) : (
